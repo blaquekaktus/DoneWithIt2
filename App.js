@@ -3,8 +3,14 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
+    //iOS: View -> UIView
+    //Android: View -> AndroidView
+
+    //let x;
+    //x.toString();
+    
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Hello React Native - Kesira</Text>
       <StatusBar style="auto" />
     </View>
   );
