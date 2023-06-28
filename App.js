@@ -1,18 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  TouchableWithoutFeedback, 
+  TouchableOpacity,
+  TouchableHighlight,
+  fade, 
+  View, 
+  SafeAreaView, 
+  IView, 
+  TouchableNativeFeedback} from 'react-native';
 
 export default function App() {
+  
+  //const handlePress = () => console.log("Text pressed");
+  console.log("App executed");
   return (
-    //iOS: View -> UIView
-    //Android: View -> AndroidView
-
-    //let x;
-    //x.toString();
-    
-    <View style={styles.container}>
-      <Text>Hello React Native - Kesira</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <<Text>Hello React Native - Kesira! </Text>
+      <TouchableNativeFeedback onPress={() => console.log("Image tapped")}>
+        <View>
+        source={{
+          width:200,
+          height: 300,
+          uri: "https://picsum.photos/200/300",
+        }} 
+        </View>
+        </TouchableNativeFeedback>>
+    </SafeAreaView>
   );
 }
 
@@ -20,7 +35,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems:'center'
   },
 });
