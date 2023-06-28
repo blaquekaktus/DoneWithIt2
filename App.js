@@ -7,26 +7,28 @@ import {
   TouchableHighlight,
   fade, 
   View, 
+  Button,
   SafeAreaView, 
   IView, 
-  TouchableNativeFeedback} from 'react-native';
+  TouchableNativeFeedback,
+  Alert
+} from 'react-native';
 
 export default function App() {
   
-  //const handlePress = () => console.log("Text pressed");
+  const handlePress = () => console.log("Text pressed");
   console.log("App executed");
   return (
     <SafeAreaView style={styles.container}>
-      <<Text>Hello React Native - Kesira! </Text>
-      <TouchableNativeFeedback onPress={() => console.log("Image tapped")}>
-        <View>
-        source={{
-          width:200,
-          height: 300,
-          uri: "https://picsum.photos/200/300",
-        }} 
-        </View>
-        </TouchableNativeFeedback>>
+      <Button 
+      title='Click Me'
+      onPress={() => 
+        Alert.alert("Mylert!","Button tapped", [
+        {text: "Yes", onPress: () => console.log("Yes")},
+        {text: "No", onPress: () => console.log("No")},
+      ])
+      } 
+      />
     </SafeAreaView>
   );
 }
